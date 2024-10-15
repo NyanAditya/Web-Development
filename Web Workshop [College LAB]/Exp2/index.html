@@ -1,13 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Book Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url('https://images7.alphacoders.com/895/thumb-1920-895992.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay (change opacity as needed) */
+            z-index: -1; /* Keeps the overlay behind the content */
+        }
+        /* Tab Menu */
+        .tab-menu {
+            display: flex;
+            flex-direction: row; /* Align buttons horizontally */
+            justify-content: center; /* Center-align buttons */
+            align-items: center;    /* Center-align contents */
+            background-color: #333;
+            padding: 20px;          /* Add padding to detach from corners */
+            margin: 20px;           /* Add margin to detach from surrounding content */
+            border-radius: 10px;    /* Round corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+        }
+        
+        .tab-menu h1 {
+            color: white;
+            margin-bottom: 20px;   /* Space between title and buttons */
+        }
+        
+        .tab-menu button {
+            background-color: #333;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Added transform for hover */
+        }
+        
+        .tab-menu button:hover {
+            background-color: #555;
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+        
+        .tab-menu button.active {
+            background-color: #555;
+        }
+        
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* General Styling */
+        h1 {
+            color: #333;
+        }
+
+        /* Book Catalogue Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 10px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        td img {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .book-rating {
+            color: gold;
+        }
+        
+    </style>
 </head>
-<frameset rows="20%, 80%">
-    <frame src="home.html" name="homeFrame" title="Home Page">
-    <frameset cols="50%, 50%">
-        <frame src="login.html" name="loginFrame" title="Login Page">
-        <frame src="catalogue.html" name="catalogueFrame" title="Catalogue Page">
-    </frameset>
-</frameset>
+<body>
+
+<!-- Tab Menu -->
+<div class="tab-menu">
+    <button class="tablink" onclick="openTab(event, 'Home')" id="defaultTab">Home</button>
+    <button class="tablink" onclick="openTab(event, 'Login')">Login</button>
+    <button class="tablink" onclick="openTab(event, 'Catalogue')">Catalogue</button>
+</div>
+
+<!-- Tab Content: Home -->
+<div id="Home" class="tab-content">
+    <h1>Welcome to the Online Bookstore</h1>
+    <p>Your one-stop shop for a wide selection of books. Feel free to browse through our catalogue or log in to make a purchase.</p>
+</div>
+
+<!-- Tab Content: Login -->
+<div id="Login" class="tab-content">
+    <h1>Login to Your Account</h1>
+    <form action="#" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<!-- Tab Content: Catalogue -->
+<div id="Catalogue" class="tab-content">
+    <h1>Our Book Catalogue</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Book Cover</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="https://m.media-amazon.com/images/I/61YRfQplFjL._AC_UF1000,1000_QL80_.jpg" alt="Let Us C" width="100"></td>
+                <td>Let Us C</td>
+                <td>₹365</td>
+                <td><span class="book-rating">★★★☆☆</span></td>
+            </tr>
+            <tr>
+                <td><img src="https://images-na.ssl-images-amazon.com/images/P/938605230X.01.LZZZZZZZ.jpg" alt="Core Python Programming" width="100"></td>
+                <td>Core Python Programming</td>
+                <td>₹1,475</td>
+                <td><span class="book-rating">★★★★☆</span></td>
+            </tr>
+            <tr>
+                <td><img src="https://m.media-amazon.com/images/I/41OksZQYt+L._SY445_SX342_.jpg" alt="HOW TO WIN FRIENDS AND INFLUENCE PEOPLE" width="100"></td>
+                <td>HOW TO WIN FRIENDS AND INFLUENCE PEOPLE</td>
+                <td>₹164</td>
+                <td><span class="book-rating">★★★★★</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Set the default tab to Home
+    document.getElementById("defaultTab").click();
+</script>
+
+</body>
 </html>
