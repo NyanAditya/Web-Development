@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background-container {
+    /* Add fallback color to check if container is rendering */
+    background-color: #333;
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;  /* Ensure full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white; /* Added for text visibility on fallback color */
+}
+
+.links-container {
+    margin-top: 30px;
+}
+
+.styled-link {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.styled-link:hover {
+    background-color: white;
+    color: #333;
+    transform: translateY(-3px);
+}

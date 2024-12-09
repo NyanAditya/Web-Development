@@ -1,0 +1,75 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://source.unsplash.com/1920x1080/?nature');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography */
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.text-block {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.primary-text {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.decorative {
+    font-family: 'Palatino', serif;
+    background-color: #fff3e0;
+    font-size: 1.2rem;
+}
+
+.technical {
+    font-family: 'Courier New', monospace;
+    background-color: #263238;
+    color: #e9ecef;
+    padding: 1.5rem;
+}
+
+.quote {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #546e7a;
+    border-left: 4px solid #ff9800;
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
