@@ -50,11 +50,12 @@
         }
     </style>
     <script src="../Exp7/validation_name_pass.js"></script>
+    <script src="../Exp8/validation_email_phno.js"></script>
 </head>
 <body>
     <div class="form-container">
         <h2>Create Your Account</h2>
-            <form action="#" method="POST" onsubmit="return validateForm()">
+            <form action="#" method="POST" onsubmit="return validateForm() && validateEmailAndPhone()">
             <div class="form-group">
                 <label for="fullname">Full Name:</label>
                 <input type="text" id="fullname" name="fullname" required>
