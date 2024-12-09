@@ -49,11 +49,12 @@
             background-color: #45a049;
         }
     </style>
+    <script src="../Exp7/validation_name_pass.js"></script>
 </head>
 <body>
     <div class="form-container">
         <h2>Create Your Account</h2>
-        <form action="#" method="POST">
+            <form action="#" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="fullname">Full Name:</label>
                 <input type="text" id="fullname" name="fullname" required>
