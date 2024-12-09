@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Questionnaire</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="questionnaireForm">
+            <h1>Feedback Questionnaire</h1>
+            
+            <div class="question">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="question">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="age">Age Group:</label>
+                <select id="age" required>
+                    <option value="">Select age group</option>
+                    <option value="18-24">18-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-44">35-44</option>
+                    <option value="45+">45+</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>Interests (select all that apply):</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="sports" name="interests">
+                    <label for="sports">Sports</label>
+                    <input type="checkbox" id="reading" name="interests">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="music" name="interests">
+                    <label for="music">Music</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="feedback">Additional Comments:</label>
+                <textarea id="feedback" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
